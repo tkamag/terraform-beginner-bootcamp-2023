@@ -1,5 +1,13 @@
 terraform {
-  required_providers {
+
+
+    cloud {
+        organization = "kamagne"
+        workspaces {
+          name = "terra-house-tka"
+        }
+      }
+    required_providers {
     random = {
       source = "hashicorp/random"
       version = "3.5.1"
@@ -36,6 +44,7 @@ resource "aws_s3_bucket" "example" {
     Environment = "Dev"
   }
 }
+
 
 output "random_bucket_name" {
   value = random_string.bucket_name.id
