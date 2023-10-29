@@ -1,6 +1,4 @@
 terraform {
-
-
     cloud {
         organization = "kamagne"
         workspaces {
